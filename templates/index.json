@@ -1,5 +1,13 @@
 {
   "sections": {
+    "hero": {
+      "type": "custom-banner",
+      "settings": {
+        "logo": "logo.png",
+        "header_text": "Find the ideal gift for your loved ones.",
+        "btn_1_link": "#"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -69,6 +77,7 @@
     }
   },
   "order": [
+    "hero",
     "image_banner",
     "featured_collection"
   ]

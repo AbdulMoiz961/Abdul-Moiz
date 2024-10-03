@@ -1,0 +1,52 @@
+<section class="custom-banner">
+    <div class="banner-container">
+        <div class="banner-header">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="{{ section.settings.logo |  asset_url }}" alt="Tisso Vison" width="151.44" height="19">
+            </div>
+            <div class="p-banner">
+                <p>{{ section.settings.header_text }}</p>
+            </div>
+            <div class="btn">
+                <a href="{{ section.settings.btn_1_link }}" class="button" id="choose-gift">{{ section.settings.button_1_text }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Custom Banner",
+    "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo Image"
+          },
+          {
+            "type": "text",
+            "id": "header_text",
+            "label": "Header Text",
+            "default": "Find the ideal gift for your loved ones."
+          },
+          {
+            "type": "url",
+            "id": "btn_1_link",
+            "label": "Button Link",
+            "default": "#"
+          },
+          {
+            "type": "text",
+            "id": "btn_1_text",
+            "label": "Button Text",
+            "default": "Choose Gift"
+          }
+        ],
+        "presets": [
+            {
+                "name": "Custom Banner"
+            }
+        ]
+}
+{% endschema %}
