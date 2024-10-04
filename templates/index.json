@@ -3,7 +3,7 @@
     "hero": {
       "type": "custom-banner",
       "settings": {
-        "logo": "https://cdn.shopify.com/s/files/1/0687/0918/7741/t/4/assets/logo.png?v=1728049932",
+        "logo": "",
         "header_text": "Find the ideal gift for your loved ones.",
         "btn_1_link": "#"
       }
