@@ -2,7 +2,16 @@
     <div class="banner-header">
         <!-- Logo -->
         <div class="logo">
-            <img src="{{ section.settings.logo |  asset_url }}" alt="Tisso Vison" width="151.44" height="19">
+          {% if section.settings.logo != blank %}
+            <img 
+              src="{{ section.settings.logo |  image_url: 'master' }}" 
+              alt="Tisso Vison" 
+              width="151.44" 
+              height="19"
+            >
+          {% else %}
+            <img src="{{ 'default-logo.png' | asset_url }}" alt="Tisso Vison logo" width="151.44" height="19">
+          {% endif %}
         </div>
         <!-- Header -->
         <div class="p-banner">
@@ -10,7 +19,10 @@
         </div>
         <!-- Choose Gift Button -->
         <div class="btn">
-            <a href="{{ section.settings.btn_1_link }}" class="button" id="choose-gift">{{ section.settings.button_1_text }}</a>
+            <a href="{{ section.settings.btn_1_link }}" class="button" id="choose-gift">
+              <p>{{ section.settings.button_1_text }}</p>
+              <img src="{{ 'arrow1.png' |  asset_url }}" alt="arrow" class="arrow-icon" width="28" height="14">
+            </a>
         </div>
     </div>
 </section>
@@ -36,6 +48,9 @@
   }
 
   /* Logo */
+  .logo {
+    padding: 0 16px;
+  }
   .logo img {
     width: 151.44px;
     height: 19px;
@@ -52,16 +67,34 @@
   }
 
   /* Button Choose Gift */
-  .btn #choose-gift {
+  .btn {
+    padding: 0 16px;
+  }
+  #choose-gift {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     background-color: #fff544;
+    padding: 4px 24px;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .btn a {
     color: #000;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: uppercase;
-    border-radius: 4px;
     text-decoration: none;
-    /* transition: background-color 0.3s ease; */
-    display: inline-block;
+    vertical-align: middle;
+  }
+  #choose-gift::before,
+  #choose-gift::after {
+    content: none;
+    border: none;
+    outline: none;
+    display: none;
   }
 
   @media screen and (max-width: 768px) {
@@ -103,7 +136,7 @@
           },
           {
             "type": "text",
-            "id": "btn_1_text",
+            "id": "button_1_text",
             "label": "Button Text",
             "default": "Choose Gift"
           }

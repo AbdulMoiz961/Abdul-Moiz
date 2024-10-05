@@ -12,7 +12,7 @@
     "hero": {
       "type": "custom-banner",
       "settings": {
-        "logo": "shopify://shop_images/logo.png",
+        "logo": "",
         "header_text": "Find the ideal gift for your loved ones.",
         "btn_1_link": "#",
         "btn_1_text": "Choose Gift"
