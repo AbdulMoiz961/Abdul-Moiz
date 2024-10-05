@@ -70,7 +70,7 @@
   .btn {
     padding: 0 16px;
   }
-  #choose-gift {
+  .button {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -80,7 +80,16 @@
     text-align: center;
     line-height: 1;
     cursor: pointer;
+    
+    background: linear-gradient(to right, black 50%, #fff544 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
   }
+  .button:hover {
+    background-position: left bottom;
+  }
+
   .btn a {
     color: #000;
     font-size: 16px;
@@ -88,6 +97,10 @@
     text-transform: uppercase;
     text-decoration: none;
     vertical-align: middle;
+    transition: all .6s ease-out;
+  }
+  .btn a:hover {
+    color: white;
   }
   #choose-gift::before,
   #choose-gift::after {
