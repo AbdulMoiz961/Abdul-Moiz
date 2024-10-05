@@ -36,8 +36,8 @@
       </div>
       <div>
         <div>
-          <h1>{{ section.settings.head-banner-text }}</h1>
-          <p>{{ section.settings.head-banner-paragraph }}</p>
+          <h1>{{ section.settings.head_banner_text }}</h1>
+          <p>{{ section.settings.head_banner_paragraph }}</p>
           <div class="btn">
             <a href="{{ section.settings.btn_2_link }}" class="button" id="shop-now">
               <p>{{ section.settings.button_2_text }}</p>
@@ -64,8 +64,7 @@
           {
             "type": "text",
             "id": "header_text",
-            "label": "Header Text",
-            "default": "Find the ideal gift for your loved ones."
+            "label": "Header Text"
           },
           {
             "type": "url",
@@ -75,8 +74,27 @@
           {
             "type": "text",
             "id": "button_1_text",
-            "label": "Button Text",
-            "default": "Choose Gift"
+            "label": "Button Text"
+          },
+          {
+            "type": "text",
+            "id": "head_banner_text",
+            "label": "Banner Heading"
+          },
+          {
+            "type": "textarea",
+            "id": "head_banner_paragraph",
+            "label": "Banner Paragraph"
+          },
+          {
+            "type": "url",
+            "id": "btn_2_link",
+            "label": "Shop Now Button Link"
+          },
+          {
+            "type": "text",
+            "id": "button_2_text",
+            "label": "Shop Now Button Text"
           }
         ],
         "presets": [

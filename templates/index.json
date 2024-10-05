@@ -15,7 +15,11 @@
         "logo": "",
         "header_text": "Find the ideal gift for your loved ones.",
         "btn_1_link": "#",
-        "btn_1_text": "Choose Gift"
+        "button_1_text": "Choose Gift",
+        "head_banner_text": "The Gift Guide",
+        "head_banner_paragraph": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to deligt your loved ones this holiday season.",
+        "btn_2_link": "#",
+        "button_2_text": "Shop Now"
       }
     },
     "image_banner": {
