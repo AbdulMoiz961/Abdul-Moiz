@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ 'custom-banner.css' |  asset_url }}" type="text/css">
+
 <section class="custom-banner">
     <div class="banner-header">
         <!-- Logo -->
@@ -28,112 +30,6 @@
         </div>
     </div>
 </section>
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-  * {
-    font-family: 'Jost';
-  }
-
-  /* Main container for the custom banner */
-  .custom-banner {
-    background-color: #f5f5f5;
-    padding: 20px 0;
-  }
-  
-  /* Container that holds content */
-  .banner-header {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* Logo */
-  .logo {
-    padding: 0 16px;
-  }
-  .logo img {
-    width: 151.44px;
-    height: 19px;
-  }
-
-  /* Header Text */
-  .p-banner {
-    font-size: 16px;
-    color: #000;
-    text-align: center;
-    flex: 1;
-    padding: 0 20px;
-    letter-spacing: 0.5px;
-  }
-
-  /* Button Choose Gift */
-  .btn {
-    padding: 0 16px;
-  }
-  .button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    background-color: #fff544;
-    padding: 4px 24px;
-    text-align: center;
-    line-height: 1;
-    cursor: pointer;
-    
-    background: linear-gradient(to right, #000 50%, #fff544 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all .5s ease-out;
-  }
-  .button:hover {
-    background-position: left bottom;
-  }
-
-  .btn a {
-    color: #000;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-decoration: none;
-    vertical-align: middle;
-    transition: all .6s ease-out;
-  }
-  .btn a:hover {
-    color: #fff;
-  }
-  .btn a .arrow-icon {
-    color: #000;
-  }
-  .btn a:hover .arrow-icon {
-    color: #fff;
-  }
-  #choose-gift::before,
-  #choose-gift::after {
-    content: none;
-    border: none;
-    outline: none;
-    display: none;
-  }
-
-  @media screen and (max-width: 768px) {
-    .banner-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .p-banner {
-      text-align: left;
-      margin-top: 10px;
-    }
-
-    .btn {
-      margin-top: 10px;
-    }
-  }
-</style>
 
 {% schema %}
 {
