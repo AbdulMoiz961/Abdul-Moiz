@@ -20,7 +20,7 @@
             <p>{{ section.settings.header_text }}</p>
         </div>
         <!-- Choose Gift Button -->
-        <div class="btn">
+        <div class="btn btn_choose-gift">
             <a href="{{ section.settings.btn_1_link }}" class="button" id="choose-gift">
               <p>{{ section.settings.button_1_text }}</p>
               <svg class="arrow-icon" width="27" height="12" viewBox="0 0 27 12" xmlns="http://www.w3.org/2000/svg">
@@ -31,14 +31,14 @@
     </div>
 
     <div class="banner-image">
-      <div>
+      <div class="banner-image-sec_1">
         <img src="{{ 'banner_Image1.svg' |  asset_url }}" alt="image banner" class="img-bnr" width="1440" height="390">
       </div>
-      <div>
-        <div>
+      <div class="banner-image-sec_2">
+        <div class="banner-image_content">
           <h1>{{ section.settings.head_banner_text }}</h1>
-          <p>{{ section.settings.head_banner_paragraph }}</p>
-          <div class="btn">
+          <p style="color: #000;">{{ section.settings.head_banner_paragraph }}</p>
+          <div class="btn btn_shop-now">
             <a href="{{ section.settings.btn_2_link }}" class="button" id="shop-now">
               <p>{{ section.settings.button_2_text }}</p>
               <svg class="arrow-icon" width="27" height="12" viewBox="0 0 27 12" xmlns="http://www.w3.org/2000/svg">

@@ -39,29 +39,31 @@
 
 /* Button Choose Gift */
 .btn {
-  padding: 0 16px;
+  padding: 0;
 }
 .button {
   display: flex;
   align-items: center;
   gap: 10px;
 
-  background-color: #fff544;
   padding: 4px 24px;
   text-align: center;
   line-height: 1;
   cursor: pointer;
+}
+#choose-gift {
+  margin: 0 10px;
 
+  background-color: #fff544;
   background: linear-gradient(to right, #000 50%, #fff544 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all .5s ease-out;
 }
-.button:hover {
+#choose-gift:hover {
   background-position: left bottom;
 }
-
-.btn a {
+.btn_choose-gift a {
   color: #000;
   font-size: 16px;
   font-weight: 400;
@@ -70,13 +72,13 @@
   vertical-align: middle;
   transition: all .6s ease-out;
 }
-.btn a:hover {
+.btn_choose-gift a:hover {
   color: #fff;
 }
-.btn a .arrow-icon {
+.btn_choose-gift .arrow-icon {
   color: #000;
 }
-.btn a:hover .arrow-icon {
+.btn_choose-gift a:hover .arrow-icon {
   color: #fff;
 }
 #choose-gift::before,
@@ -86,6 +88,68 @@
   outline: none;
   display: none;
 }
+
+/* Banner Image Section */
+.banner-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #fff;
+  margin: 10px 0;
+}
+/* First Section of Banner Image */
+.banner-image-sec_1 {
+  text-align: center;
+}
+.banner-image-sec_1 img {
+  min-width: 100%;
+  height: auto;
+}
+/* Second Section of Banner Image */
+.banner-image-sec_2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  padding-left: 50px;
+  margin-left: 27px;
+}
+
+/* Banner-Image Content */
+.banner-image_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 50%;
+  padding-left: 16px;
+}
+.banner-image_content h1 {
+  font-family: 'Jost';
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+.banner-image_content p {
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button Shop Now */
 
 @media screen and (max-width: 768px) {
   .banner-header {
