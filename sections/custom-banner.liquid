@@ -1,55 +1,63 @@
 <link rel="stylesheet" href="{{ 'custom-banner.css' |  asset_url }}" type="text/css">
 
 <section class="custom-banner">
-    <div class="banner-header">
-        <!-- Logo -->
-        <div class="logo">
-          {% if section.settings.logo != blank %}
-            <img 
-              src="{{ section.settings.logo |  image_url: 'master' }}" 
-              alt="Tisso Vison" 
-              width="151.44" 
-              height="19"
-            >
-          {% else %}
-            <img src="{{ 'default-logo.png' | asset_url }}" alt="Tisso Vison logo" width="151.44" height="19">
-          {% endif %}
-        </div>
-        <!-- Header -->
-        <div class="p-banner">
-            <p>{{ section.settings.header_text }}</p>
-        </div>
-        <!-- Choose Gift Button -->
-        <div class="btn btn_choose-gift">
-            <a href="{{ section.settings.btn_1_link }}" class="button" id="choose-gift">
-              <p>{{ section.settings.button_1_text }}</p>
-              <svg class="arrow-icon" width="27" height="12" viewBox="0 0 27 12" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75L1 5.25ZM26.5303 6.53033C26.8232 6.23743 26.8232 5.76256 26.5303 5.46967L21.7574 0.696697C21.4645 0.403804 20.9896 0.403804 20.6967 0.696697C20.4038 0.989591 20.4038 1.46446 20.6967 1.75736L24.9393 6L20.6967 10.2426C20.4038 10.5355 20.4038 11.0104 20.6967 11.3033C20.9896 11.5962 21.4645 11.5962 21.7574 11.3033L26.5303 6.53033ZM1 6.75L26 6.75L26 5.25L1 5.25L1 6.75Z" fill="currentColor"/>
-              </svg>
-            </a>
-        </div>
+  <div class="banner-header">
+    <!-- Logo -->
+    <div class="logo">
+      {% if section.settings.logo != blank %}
+        <img
+          src="{{ section.settings.logo |  image_url: 'master' }}"
+          alt="Tisso Vison"
+          width="151.44"
+          height="19"
+          {% comment %} onerror="this.src='{{ 'default-logo.png' |  asset_url }}';" {% endcomment %}
+        >
+      {% else %}
+        <img src="{{ 'default-logo.png' | asset_url }}" alt="Default Logo" width="151.44" height="19">
+      {% endif %}
     </div>
+    <!-- Header -->
+    <div class="p-banner">
+      <p>{{ section.settings.header_text }}</p>
+    </div>
+    <!-- Choose Gift Button -->
+    <div class="btn btn_choose-gift">
+      <a href="{{ section.settings.btn_1_link }}" class="button" id="choose-gift">
+        <p>{{ section.settings.button_1_text }}</p>
+        <svg class="arrow-icon" width="27" height="12" viewBox="0 0 27 12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75L1 5.25ZM26.5303 6.53033C26.8232 6.23743 26.8232 5.76256 26.5303 5.46967L21.7574 0.696697C21.4645 0.403804 20.9896 0.403804 20.6967 0.696697C20.4038 0.989591 20.4038 1.46446 20.6967 1.75736L24.9393 6L20.6967 10.2426C20.4038 10.5355 20.4038 11.0104 20.6967 11.3033C20.9896 11.5962 21.4645 11.5962 21.7574 11.3033L26.5303 6.53033ZM1 6.75L26 6.75L26 5.25L1 5.25L1 6.75Z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </div>
 
-    <div class="banner-image">
-      <div class="banner-image-sec_1">
-        <img src="{{ 'banner_Image1.svg' |  asset_url }}" alt="image banner" class="img-bnr" width="1440" height="390">
-      </div>
-      <div class="banner-image-sec_2">
-        <div class="banner-image_content">
-          <h1>{{ section.settings.head_banner_text }}</h1>
-          <p style="color: #000;">{{ section.settings.head_banner_paragraph }}</p>
-          <div class="btn btn_shop-now">
-            <a href="{{ section.settings.btn_2_link }}" class="button" id="shop-now">
-              <p>{{ section.settings.button_2_text }}</p>
-              <svg class="arrow-icon" width="27" height="12" viewBox="0 0 27 12" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75L1 5.25ZM26.5303 6.53033C26.8232 6.23743 26.8232 5.76256 26.5303 5.46967L21.7574 0.696697C21.4645 0.403804 20.9896 0.403804 20.6967 0.696697C20.4038 0.989591 20.4038 1.46446 20.6967 1.75736L24.9393 6L20.6967 10.2426C20.4038 10.5355 20.4038 11.0104 20.6967 11.3033C20.9896 11.5962 21.4645 11.5962 21.7574 11.3033L26.5303 6.53033ZM1 6.75L26 6.75L26 5.25L1 5.25L1 6.75Z" fill="currentColor"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <img src="{{ 'banner_Image2.svg' |  asset_url }}" alt="image banner" class="img-bnr" id="banner_img2" width="890" height="402">
-      </div>
+  <div class="banner-image">
+    <div class="banner-image-sec_1">
+      <img src="{{ 'banner_Image1.svg' |  asset_url }}" alt="image banner" class="img-bnr" width="1640" height="390">
     </div>
+    <div class="banner-image-sec_2">
+      <div class="banner-image_content">
+        <h1>{{ section.settings.head_banner_text }}</h1>
+        <p style="color: #000;">{{ section.settings.head_banner_paragraph }}</p>
+        <div class="btn btn_shop-now">
+          <a href="{{ section.settings.btn_2_link }}" class="button" id="shop-now">
+            <p>{{ section.settings.button_2_text }}</p>
+            <svg class="arrow-icon" width="27" height="12" viewBox="0 0 27 12" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75L1 5.25ZM26.5303 6.53033C26.8232 6.23743 26.8232 5.76256 26.5303 5.46967L21.7574 0.696697C21.4645 0.403804 20.9896 0.403804 20.6967 0.696697C20.4038 0.989591 20.4038 1.46446 20.6967 1.75736L24.9393 6L20.6967 10.2426C20.4038 10.5355 20.4038 11.0104 20.6967 11.3033C20.9896 11.5962 21.4645 11.5962 21.7574 11.3033L26.5303 6.53033ZM1 6.75L26 6.75L26 5.25L1 5.25L1 6.75Z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <img
+        src="{{ 'banner_Image2.svg' |  asset_url }}"
+        alt="image banner"
+        class="img-bnr"
+        id="banner_img2"
+        width="890"
+        height="402"
+      >
+    </div>
+  </div>
 </section>
 
 {% schema %}

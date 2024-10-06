@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
   font-family: 'Jost';
 }
 
@@ -16,6 +22,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 18px;
 }
 
 /* Logo */
@@ -52,13 +59,12 @@
   cursor: pointer;
 }
 #choose-gift {
-  margin: 0 10px;
-
   background-color: #fff544;
-  background: linear-gradient(to right, #000 50%, #fff544 50%);
+
+  background: linear-gradient(to right, black 50%, #fff544 50%);
   background-size: 200% 100%;
   background-position: right bottom;
-  transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
 }
 #choose-gift:hover {
   background-position: left bottom;
@@ -66,20 +72,23 @@
 .btn_choose-gift a {
   color: #000;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;
   vertical-align: middle;
-  transition: all .6s ease-out;
+  transition: all 0.6s ease-out;
 }
 .btn_choose-gift a:hover {
-  color: #fff;
+  color: white;
 }
-.btn_choose-gift .arrow-icon {
-  color: #000;
+.btn_choose-gift a .arrow-icon {
+  color: #000000;
 }
 .btn_choose-gift a:hover .arrow-icon {
-  color: #fff;
+  color: white;
+}
+#choose-gift {
+  margin: 0 10px;
 }
 #choose-gift::before,
 #choose-gift::after {
@@ -107,6 +116,7 @@
   min-width: 100%;
   height: auto;
 }
+
 /* Second Section of Banner Image */
 .banner-image-sec_2 {
   display: flex;
@@ -127,33 +137,33 @@
   max-width: 50%;
   padding-left: 16px;
 }
+
 .banner-image_content h1 {
   font-family: 'Jost';
   font-size: 70px;
   font-weight: 500;
   line-height: 70px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #000;
+  color: #000000;
 }
+
 .banner-image_content p {
   font-family: 'Jost';
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Button Shop Now */
+/* Shop-Now Button */
 #shop-now {
   background-color: #000;
 
-  background: linear-gradient(to right, #fff544 50%, #000 50%);
+  background: linear-gradient(to right, #fff544 50%, #000000 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.5s ease-out;
@@ -171,13 +181,13 @@
   transition: all 0.6s ease-out;
 }
 .btn_shop-now a:hover {
-  color: #000;
+  color: #000000;
 }
 .btn_shop-now a .arrow-icon {
-  color: #fff;
+  color: white;
 }
 .btn_shop-now a:hover .arrow-icon {
-  color: #000;
+  color: #000000;
 }
 #shop-now::before,
 #shop-now::after {
