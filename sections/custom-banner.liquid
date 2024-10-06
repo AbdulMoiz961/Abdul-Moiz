@@ -58,6 +58,9 @@
       >
     </div>
   </div>
+  <div class="bottom-txt">
+    <p>{{ section.settings.bottom_txt_paragraph }}</p>
+  </div>
 </section>
 
 {% schema %}
@@ -103,6 +106,11 @@
             "type": "text",
             "id": "button_2_text",
             "label": "Shop Now Button Text"
+          },
+          {
+            "type": "textarea",
+            "id": "bottom_txt_paragraph",
+            "label": "Bottom Text"
           }
         ],
         "presets": [

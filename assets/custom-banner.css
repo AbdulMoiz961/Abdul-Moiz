@@ -201,6 +201,23 @@ section {
   display: none;
 }
 
+/* Bottom Text */
+.bottom-txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+}
+.bottom-txt p {
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 13.42px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 768px) {
   .banner-header {
     flex-direction: column;
