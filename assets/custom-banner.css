@@ -229,11 +229,11 @@ section {
 .hamburger {
   background: none;
   border: none;
-  font-size: 30px;
   cursor: pointer;
 }
 
-.hamburger-icon {
+.hamburger-icon span{
+  font-size: 30px;
   color: #000;
 }
 
@@ -271,7 +271,7 @@ section {
   .mobile-view {
     display: flex;
   }
-  
+
   .mobile-nav {
     display: flex;
   }
