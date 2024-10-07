@@ -259,6 +259,10 @@ section {
   display: none;
 }
 
+.banner-image-sec_mobile {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .banner-header {
     flex-direction: column;
@@ -295,7 +299,8 @@ section {
     gap: 64px;
   }
 
-  .banner-image-sec_1 {
+  .banner-image-sec_1, 
+  .img-bnr {
     display: none;
   }
 }
