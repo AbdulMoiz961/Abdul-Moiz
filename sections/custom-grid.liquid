@@ -1,0 +1,83 @@
+
+<section class="custom-grid_section">
+    <div class="custom-grid">
+        <div class="custom-grid_header">
+            <h2>{{ section.settings.grid_header_txt }}</h2>
+        </div>
+        <div class="custom_product-grid">
+            {% for product in collections.all.products limit:6 %}
+                <div class="product-item">
+                    {% if product.featured_image %}
+                        <img 
+                          src="{{ product.featured_image |  image_url  }}" 
+                          alt="{{ product.title }}"
+                          width="433"
+                          height="444"
+                        >
+                    {% else %}
+                        <img 
+                          src="{{ 'placeholder.png' |  asset_url  }}" 
+                          alt="Placeholder Image"
+                          width="433"
+                          height="444"
+                        >
+                    {% endif %}
+                    <button 
+                      class="view-product" 
+                      data-product-handle="{{ product.handle }}"
+                    >
+                        +
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Custom Grid",
+    "settings": [
+        {
+            "type": "text",
+            "id": "grid_header_txt",
+            "label": "Product Grid Header"
+        },
+        {
+            "type": "product",
+            "id": "product_1",
+            "label": "Select Product 1"
+        },
+        {
+            "type": "product",
+            "id": "product_2",
+            "label": "Select Product 2"
+        },    
+        {
+            "type": "product",
+            "id": "product_3",
+            "label": "Select Product 3"
+        },
+        {
+            "type": "product",
+            "id": "product_4",
+            "label": "Select Product 4"
+        },
+        {
+            "type": "product",
+            "id": "product_5",
+            "label": "Select Product 5"
+        },
+        {
+            "type": "product",
+            "id": "product_6",
+            "label": "Select Product 6"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Grid"
+        }
+    ]
+}
+{% endschema %}
