@@ -340,4 +340,14 @@ section {
     text-align: center;
     max-width: 340px;
   }
+
+  .button {
+    padding: 4px;
+  }
+  .btn_shop-now {
+    margin: 190px 10px 38px 10px;
+  }
+  .btn_shop-now a {
+    font-weight: 400;
+  }
 }
