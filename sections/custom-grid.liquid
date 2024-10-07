@@ -173,8 +173,25 @@
                 modal.style.display = 'flex';
               })
               .catch((err) => console.error('Error fetching product details:' err));
-        }
+            }
+            
+            // adding event listeners to every + button
+            document.querySelectorAll('.view-product').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Get product handle
+                    var productHandle = this.getAttribute('data-product-handle');
+                    openModal(productHandle);
+                });
+            });
 
-        
+            // Close modal
+            closeModalBtn.addEventListener('click', function () {
+                closeModal();
+            });
+            window.addEventListener('click', function (event) {
+                if (event.target == modal) {
+                    closeModal();
+                }
+            });
     })
  </script>
