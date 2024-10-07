@@ -236,12 +236,6 @@ section {
   cursor: pointer;
 }
 
-.hamburger-icon span{
-  font-size: 42px;
-  font-weight: 600;
-  color: #000;
-}
-
 .mobile-menu {
   display: none;
   position: absolute;
