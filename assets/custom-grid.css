@@ -213,6 +213,7 @@
         line-height: 28.8px;
     }
     .custom_product-grid {
+        flex-direction: row;
         gap: 4px;
     }
     .product-item img {
