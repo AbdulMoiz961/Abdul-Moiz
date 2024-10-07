@@ -308,6 +308,10 @@ section {
     display: none;
   }
 
+  .banner-image-sec_2 {
+    justify-content: center;
+  }
+
   .banner-image_content {
     align-items: center;
     padding-top: 40px;
