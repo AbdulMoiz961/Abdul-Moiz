@@ -194,5 +194,55 @@
         closeModal();
       }
     });
+
+    // Add to Cart functionality
+    addToCartBtn.addEventListener('click', function () {
+        var selectedColor = colorSelect.value;
+        var selectedSize = sizeSelect.value;
+
+        selectedVariant = selectedProduct.variants.find(function (variant) {
+            return variant.option1 === selectedColor && variant.option2 === selectedSize;
+        });
+
+        if (!selectedVariant) {
+            alert('Please select valid options.');
+            return;
+        }
+
+        // Adding product to cart
+        fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: selectedVariant.id,
+                quantity: 1,
+            }),
+        })
+        .then((response) => response.json())
+        .then((cart) => {
+            // Condition to check if Black and Medium is selected
+            if (selectedColor === 'Black' && selectedSize === 'Medium') {
+                fetch('/cart/add.js', {
+                    method: 'POST',
+                    header: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        id: 46020428333213,
+                        quantity: 1,
+                    }),
+                })
+                .then(() => {
+                    alert('Product added to cart with Soft winter Jacket!');
+                })
+                .catch((err) => console.error('Error adding Soft Winter Jacket to cart: ', err));
+            } else {
+                alert('Product added to cart!');
+            }
+        })
+        .catch((err) => console.error('Error adding product to cart:', err));
+    });
   });
  </script>
