@@ -308,6 +308,11 @@ section {
     display: none;
   }
 
+  .banner-image_content {
+    align-items: center;
+    padding-top: 40px;
+  }
+
   .banner-image_content h1 {
     font-size: 30px;
     line-height: 30px;
@@ -318,5 +323,11 @@ section {
   }
   #mobile_txt {
     display: flex;
+  }
+
+  .banner-image_content p {
+    font-size: 16px;
+    line-height: 20.8px;
+    text-align: center;
   }
 }
