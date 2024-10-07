@@ -37,6 +37,7 @@
     </div>
   </div>
 
+  <!-- For Desktop Screen -->
   <div class="banner-header">
     <!-- Logo -->
     <div class="logo">
@@ -71,7 +72,12 @@
     <div class="banner-image-sec_1">
       <img src="{{ 'banner_Image1.svg' |  asset_url }}" alt="image banner" class="img-bnr" width="1640" height="390">
     </div>
+    
     <div class="banner-image-sec_2">
+      <!-- Mobile Background -->
+      <div class="banner-image-sec_mobile">
+        <img class="mobile-background" src="{{ 'res-background.png' | asset_url }}" alt="Responsive Background" width="686" height="264">
+      </div>
       <div class="banner-image_content">
         <h1>{{ section.settings.head_banner_text }}</h1>
         <p style="color: #000;">{{ section.settings.head_banner_paragraph }}</p>

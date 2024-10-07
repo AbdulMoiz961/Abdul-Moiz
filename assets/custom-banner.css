@@ -292,7 +292,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 78px;
+    gap: 64px;
+  }
 
+  .banner-image-sec_1 {
+    display: none;
   }
 }
