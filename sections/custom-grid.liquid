@@ -108,90 +108,91 @@
 {% comment %} Pop Up Functionality {% endcomment %}
  <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var modal = document.getElementById('product-modal');
-        var modalImg = document.getElementById('modal-image');
-        var modalTitle = document.getElementById('modal-title');
-        var modalPrice = document.getElementById('popup-price');
-        var modalDescription = document.getElementById('popup-description');
-        var colorSelect = document.getElementById('variant-color');
-        var sizeSelect = document.getElementById('variant-size');
-        var addToCartBtn = document.getElementById('add-to-cart-btn');
-        var closeModalBtn = document.querySelector('.close');
+    var modal = document.getElementById('product-modal');
+    var modalImg = document.getElementById('modal-image');
+    var modalTitle = document.getElementById('modal-title');
+    var modalPrice = document.getElementById('popup-price');
+    var modalDescription = document.getElementById('popup-description');
+    var colorSelect = document.getElementById('variant-color');
+    var sizeSelect = document.getElementById('variant-size');
+    var addToCartBtn = document.getElementById('add-to-cart-btn');
+    var closeModalBtn = document.querySelector('.close');
 
-        var selectedProduct;
+    var selectedProduct;
 
-        // Popup close function
-        function closeModal() {
-            modal.style.display = 'none';
-        }
+    // Close modal function
+    function closeModal() {
+      modal.style.display = 'none';
+    }
 
-        // Popup open function 
-        function openModal(productHandle) {
-            // Fetching product details through Shopify API 
-            fetch('/product/' + productHandle + '.js')
-              .then((response) => response.json())
-              .then((product) => {
-                selectedProduct = product;
+    // Open modal function
+    function openModal(productHandle) {
+      // Fetch product details via Shopify's API
+      fetch('/products/' + productHandle + '.js')
+        .then((response) => response.json())
+        .then((product) => {
 
-                // Setting popup contents with fetch product details
-                modalImg.src = product.images[0];
-                modalTitle.textContent = product.title;
-                modalPrice.textContent = product.price + '$';
-                modalDescription.innerHTML = product.description;
+          selectedProduct = product;
 
-                // Clear previous inputs
-                colorSelect.innerHTML = '';
-                sizeSelect.innerHTML = '';
+          // Set modal contents with fetched product details
+          modalImg.src = product.images[0]; 
+          modalTitle.textContent = product.title;
+          modalPrice.textContent = product.price + ' €';
+          modalDescription.innerHTML = product.description;
 
-                // Arrays to store color and size variants
-                var colors = new Set();
-                var sizes = new Set();
+          // Clear previous options
+          colorSelect.innerHTML = '';
+          sizeSelect.innerHTML = '';
 
-                // Populating the variant dropdowns
-                product.variants.forEach(function (variant) {
-                    if (variant.option1) {
-                        colors.add(variant.option1);
-                    }
-                    if (variant.option2) {
-                        sizes.add(variant.option2)
-                    }
-                });
+          // Create arrays to store color and size variants
+          var colors = new Set();
+          var sizes = new Set();
 
-                colors.forEach(function (color) {
-                    var optionColor = document.createElement('option');
-                    optionColor.textContent = color;
-                    colorSelect.appendChild(optionColor);
-                });
-                
-                sizes.forEach(function (size) {
-                    var optionSize = document.createElement('option');
-                    optionSize.textContent = size;
-                    sizeSelect.appendChild(optionSize);
-                });
-
-                // popup display
-                modal.style.display = 'flex';
-              })
-              .catch((err) => console.error('Error fetching product details:' err));
+          // Populate the variant dropdowns (color and size)
+          product.variants.forEach(function (variant) {
+            if (variant.option1) {
+              colors.add(variant.option1);
             }
-            
-            // adding event listeners to every + button
-            document.querySelectorAll('.view-product').forEach(function (button) {
-                button.addEventListener('click', function () {
-                    // Get product handle
-                    var productHandle = this.getAttribute('data-product-handle');
-                    openModal(productHandle);
-                });
-            });
+            if (variant.option2) {
+              sizes.add(variant.option2);
+            }
+          });
 
-            // Close modal
-            closeModalBtn.addEventListener('click', function () {
-                closeModal();
-            });
-            window.addEventListener('click', function (event) {
-                if (event.target == modal) {
-                    closeModal();
-                }
-            });
-    })
+          // Add colors to color select
+          colors.forEach(function (color) {
+            var optionColor = document.createElement('option');
+            optionColor.textContent = color;
+            colorSelect.appendChild(optionColor);
+          });
+
+          // Add sizes to size select
+          sizes.forEach(function (size) {
+            var optionSize = document.createElement('option');
+            optionSize.textContent = size;
+            sizeSelect.appendChild(optionSize);
+          });
+
+          // Open the modal
+          modal.style.display = 'flex';
+        })
+        .catch((err) => console.error('Error fetching product details:', err));
+    }
+        // Add event listeners to all "view-product" buttons
+        document.querySelectorAll('.view-product').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var productHandle = this.getAttribute('data-product-handle');
+        openModal(productHandle);
+      });
+    });
+
+    // close modal
+    closeModalBtn.addEventListener('click', function () {
+      closeModal();
+    });
+    window.addEventListener('click', function (event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    });
+  });
  </script>
