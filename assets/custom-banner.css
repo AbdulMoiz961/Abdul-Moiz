@@ -282,6 +282,10 @@ section {
     display: flex;
   }
 
+  .mobile-menu {
+    display: flex;
+  }
+
   .mobile-nav {
     display: flex;
     align-items: center;
