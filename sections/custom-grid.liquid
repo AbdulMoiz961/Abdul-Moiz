@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ 'custom-grid.css' |  asset_url }}" type="text/css">
 
 <section class="custom-grid_section">
     <div class="custom-grid">
@@ -33,6 +34,28 @@
         </div>
     </div>
 </section>
+
+<!-- Popup Modal for Product items -->
+ <div id="product-modal" style="display: none;">
+    <div class="modal-div">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <div class="modal-detail-container">
+                <img src="{{ '' | image_url }}" alt="Product Image" width="120" height="140">
+                <div class="modal-text">
+                    <h3 id="modal-title"></h3>
+                    <p id="popup-price"></p>
+                    <p id="popup-description"></p>
+                </div>
+            </div>
+            <label for="variant-color">Color</label>
+            <select id="variant-color"></select>
+            <label for="variant-size">Size</label>
+            <select id="variant-size"></select>
+            <button id="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+ </div>
 
 {% schema %}
 {
