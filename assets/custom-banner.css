@@ -237,6 +237,8 @@ section {
 }
 
 .mobile-menu {
+  flex-direction: column;
+
   display: none;
   position: absolute;
   top: 60px;
