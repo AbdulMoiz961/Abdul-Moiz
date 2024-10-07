@@ -41,7 +41,7 @@
         <span class="close">&times;</span>
         <div class="modal-content">
             <div class="modal-detail-container">
-                <img src="{{ '' | image_url }}" alt="Product Image" width="120" height="140">
+                <img id="modal-image" src="{{ '' | image_url }}" alt="Product Image" width="120" height="140">
                 <div class="modal-text">
                     <h3 id="modal-title"></h3>
                     <p id="popup-price"></p>
@@ -104,3 +104,77 @@
     ]
 }
 {% endschema %}
+
+{% comment %} Pop Up Functionality {% endcomment %}
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var modal = document.getElementById('product-modal');
+        var modalImg = document.getElementById('modal-image');
+        var modalTitle = document.getElementById('modal-title');
+        var modalPrice = document.getElementById('popup-price');
+        var modalDescription = document.getElementById('popup-description');
+        var colorSelect = document.getElementById('variant-color');
+        var sizeSelect = document.getElementById('variant-size');
+        var addToCartBtn = document.getElementById('add-to-cart-btn');
+        var closeModalBtn = document.querySelector('.close');
+
+        var selectedProduct;
+
+        // Popup close function
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Popup open function 
+        function openModal(productHandle) {
+            // Fetching product details through Shopify API 
+            fetch('/product/' + productHandle + '.js')
+              .then((response) => response.json())
+              .then((product) => {
+                selectedProduct = product;
+
+                // Setting popup contents with fetch product details
+                modalImg.src = product.images[0];
+                modalTitle.textContent = product.title;
+                modalPrice.textContent = product.price + '$';
+                modalDescription.innerHTML = product.description;
+
+                // Clear previous inputs
+                colorSelect.innerHTML = '';
+                sizeSelect.innerHTML = '';
+
+                // Arrays to store color and size variants
+                var colors = new Set();
+                var sizes = new Set();
+
+                // Populating the variant dropdowns
+                product.variants.forEach(function (variant) {
+                    if (variant.option1) {
+                        colors.add(variant.option1);
+                    }
+                    if (variant.option2) {
+                        sizes.add(variant.option2)
+                    }
+                });
+
+                colors.forEach(function (color) {
+                    var optionColor = document.createElement('option');
+                    optionColor.textContent = color;
+                    colorSelect.appendChild(optionColor);
+                });
+                
+                sizes.forEach(function (size) {
+                    var optionSize = document.createElement('option');
+                    optionSize.textContent = size;
+                    sizeSelect.appendChild(optionSize);
+                });
+
+                // popup display
+                modal.style.display = 'flex';
+              })
+              .catch((err) => console.error('Error fetching product details:' err));
+        }
+
+        
+    })
+ </script>
