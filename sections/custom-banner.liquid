@@ -162,6 +162,6 @@
   const mobileMenu = document.getElementById('mobile-menu');
 
   hamburger.addEventListener('click', () => {
-    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex;'
-  })
+  mobileMenu.classList.toggle('active');
+});
 </script>
