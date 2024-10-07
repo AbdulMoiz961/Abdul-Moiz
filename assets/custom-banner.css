@@ -300,7 +300,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 64px;
+    gap: 70px;
   }
 
   .banner-image-sec_1, 
@@ -316,6 +316,7 @@ section {
   }
 
   .banner-image_content {
+    justify-content: center;
     align-items: center;
     padding-top: 40px;
     gap: 24px;
