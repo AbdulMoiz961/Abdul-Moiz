@@ -263,6 +263,10 @@ section {
   display: none;
 }
 
+#mobile_txt {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .banner-header {
     flex-direction: column;
@@ -302,5 +306,17 @@ section {
   .banner-image-sec_1, 
   .img-bnr {
     display: none;
+  }
+
+  .banner-image_content h1 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  #desktop_txt {
+    display: none;
+  }
+  #mobile_txt {
+    display: flex;
   }
 }

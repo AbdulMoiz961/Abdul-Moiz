@@ -76,7 +76,9 @@
     <div class="banner-image-sec_2">
       <div class="banner-image_content">
         <h1>{{ section.settings.head_banner_text }}</h1>
-        <p style="color: #000;">{{ section.settings.head_banner_paragraph }}</p>
+        <p id="desktop_txt" style="color: #000;">{{ section.settings.head_banner_paragraph }}</p>
+        <!-- Mobile view text -->
+         <p id="mobile_txt" style="color: #000;">{{ section.settings.head_banner_mobile_paragraph }}</p>
         <div class="btn btn_shop-now">
           <a href="{{ section.settings.btn_2_link }}" class="button" id="shop-now">
             <p>{{ section.settings.button_2_text }}</p>
@@ -134,6 +136,11 @@
             "type": "textarea",
             "id": "head_banner_paragraph",
             "label": "Banner Paragraph"
+          },
+          {
+            "type": "textarea",
+            "id": "head_banner_mobile_paragraph",
+            "label": "Banner Mobile Paragraph"
           },
           {
             "type": "url",
