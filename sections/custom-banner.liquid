@@ -21,7 +21,7 @@
       {% endif %}
     </div>
     <!-- Mobile DropDown -->
-    <nav class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu" id="mobileMenu">
       <div class="p-banner">
         <p>{{ section.settings.header_text }}</p>
       </div>
@@ -34,7 +34,7 @@
           </svg>
         </a>
       </div>
-    </nav>
+    </div>
   </div>
 
   <div class="banner-header">
@@ -159,7 +159,7 @@
 
 <script>
   const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenu = document.getElementById('mobileMenu');
 
   hamburger.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
