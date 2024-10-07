@@ -196,3 +196,27 @@
 #add-to-cart-btn:active {
     background: #555;
 }
+
+@media screen and (max-width: 400px) {
+    .custom-grid_section {
+        padding: 50px
+    }
+    .custom-grid {
+        gap: 20px;
+    }
+    .custom-grid_header {
+        justify-content: center;
+        padding: 0;
+    }
+    .custom-grid_header h2 {
+        font-size: 24px;
+        line-height: 28.8px;
+    }
+    .custom_product-grid {
+        gap: 4px;
+    }
+    .product-item img {
+        width: 169px;
+        height: 186.42px;
+    }
+}
