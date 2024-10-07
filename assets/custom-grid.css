@@ -1,2 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
+.custom-grid_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 50px;
+}
+
+.custom-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.custom-grid_header {
+    display: flex;
+    align-items: center;
+    padding: 0 72px;
+}
+
+.custom-grid_header h2 {
+    font-family: 'Lustria', serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43.2px;
+    color: #000;
+}
+
+.custom_product-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    position: relative;
+    text-align: center;
+}
+.product-item img {
+    width: 433px;
+    height: 444px;
+    object-fit: cover;
+}
+
+.view-product {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
