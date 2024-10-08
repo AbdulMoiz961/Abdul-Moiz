@@ -12,7 +12,6 @@
     "hero": {
       "type": "custom-banner",
       "settings": {
-        "logo": "",
         "header_text": "Find the ideal gift for your loved ones.",
         "btn_1_link": "#",
         "button_1_text": "Choose Gift",
@@ -27,7 +26,13 @@
     "custom-grid": {
       "type": "custom-grid",
       "settings": {
-        "grid_header_txt": "Tisso vison in the wild"
+        "grid_header_txt": "Tisso vison in the wild",
+        "product_1": "led-high-tops",
+        "product_2": "",
+        "product_3": "",
+        "product_4": "",
+        "product_5": "",
+        "product_6": ""
       }
     }
   },
